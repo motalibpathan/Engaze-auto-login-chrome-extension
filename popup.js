@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneNumber = document.getElementById("phoneNumber").value;
     const password = document.getElementById("password").value;
 
+    if (!phoneNumber || !password) {
+      showMessage("Please fill in the phone number and password!", true);
+      return;
+    }
+
     chrome.storage.sync.set({ phoneNumber, password }, () => {
       showMessage("Credentials saved!", false, 0);
     });
