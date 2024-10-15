@@ -22,6 +22,9 @@ This Chrome extension allows users to automatically log in to a Engaze UI. This 
    - Enable "Developer mode" in the top-right corner.
    - Click on "Load unpacked" and select the folder containing the cloned repository.
 
+3. **Pin the Extension**:
+   - After loading, pin the extension by clicking the puzzle piece icon in the top-right corner of Chrome, then click the pin icon next to your extension.
+
 ## How to Use
 
 - When you click on the extension icon in Chrome, a popup will appear where you can:
