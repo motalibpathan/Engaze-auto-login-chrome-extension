@@ -10,9 +10,12 @@
       body {
         font-family: "Poppins", sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 0;
         padding-top: 0;
-        width: 250px;
+        width: 350px;
+        background: url("/bg.jpg");
+        background-position: left top;
+        backdrop-filter: blur(20px);
       }
 
       h3 {
@@ -59,6 +62,14 @@
         background: linear-gradient(45deg, rgb(235, 75, 75), rgb(62, 145, 155));
       }
 
+      .container {
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 20px;
+      }
+
       .info {
         text-align: center;
         font-size: 12px;
@@ -68,6 +79,12 @@
       .image-container {
         display: flex;
         justify-content: center;
+        margin-top: 10px;
+      }
+
+      img {
+        border-radius: 10px;
+        overflow: hidden;
       }
 
       .message {
@@ -89,27 +106,62 @@
         border-color: #f5c6cb;
         color: #721c24;
       }
+
+      .macos-controller {
+        display: flex;
+        justify-content: end;
+        background-color: #f5f5f7;
+        padding: 5px;
+      }
+
+      .macos-controller__button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #d1d1d1;
+        margin: 0 5px;
+      }
+
+      .macos-controller__button:nth-child(1) {
+        background-color: #ff5f57;
+      }
+
+      .macos-controller__button:nth-child(2) {
+        background-color: #ffbd2e;
+      }
+
+      .macos-controller__button:nth-child(3) {
+        background-color: #27c93f;
+      }
     </style>
   </head>
   <body>
+    <!-- macos three controller on top -->
+    <div class="macos-controller">
+      <div class="macos-controller__button"></div>
+      <div class="macos-controller__button"></div>
+      <div class="macos-controller__button"></div>
+    </div>
     <div class="image-container">
       <img src="/icon.png" alt="" width="80" height="80" />
     </div>
-    <h3>Auto Login Credentials</h3>
+    <div class="container">
+      <h3>Auto Login Credentials</h3>
 
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" placeholder="Enter phone number" />
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" placeholder="Enter phone number" />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="Enter password" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter password" />
 
-    <!-- Manual Login Button -->
-    <div id="buttonContainer">
-      <button id="manualLogin" class="manual-login">Save and Login</button>
+      <!-- Manual Login Button -->
+      <div id="buttonContainer">
+        <button id="manualLogin" class="manual-login">Save and Login</button>
+      </div>
+
+      <div class="info">Credentials are saved securely.</div>
+      <div id="message"></div>
     </div>
-
-    <div class="info">Credentials are saved securely.</div>
-    <div id="message"></div>
     <script src="popup.js"></script>
   </body>
 </html>
